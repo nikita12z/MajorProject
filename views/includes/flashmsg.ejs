@@ -1,0 +1,27 @@
+<!-- For success: -->
+<% if(success && success.length){ %> <!-- success.length also checkede as success is an array and it needs to be empty for the tag to completely disappear -->
+    <div class="alert alert-success alert-dismissable fade show col-6 offset-3" 
+    role="alert">
+        <%= success %>
+        <button 
+            type="button" 
+            class="btn-close" 
+            data-bs-dismiss="alert" 
+            aria-label="Close"
+        ></button>
+    </div>
+<% } %>
+
+<!-- For error: -->
+<% if(error && error.length){ %> <!-- success.length also checkede as success is an array and it needs to be empty for the tag to completely disappear -->
+    <div class="alert alert-danger alert-dismissable fade show col-6 offset-3" 
+    role="alert">
+        <%= error %>
+        <button 
+            type="button" 
+            class="btn-close" 
+            data-bs-dismiss="alert" 
+            aria-label="Close"
+        ></button>
+    </div>
+<% } %>

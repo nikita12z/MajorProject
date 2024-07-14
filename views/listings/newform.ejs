@@ -1,0 +1,141 @@
+<% layout("/layouts/boilerplate")%>
+
+<!-- code into rows and columns to control the entire size of form. row me divide first then  andar ke divs columns me divide -->
+<div class="row mt-3"> <!-- row div -->
+  <div class="col-8 offset-2"> <!-- col div into 8cols + space from left so that pura form thoda shift ho -->
+    
+    <!--------------------------------------------------------------------------------------------------------------------------------------------------------->
+    <br>
+    <h3>Create a New Listing</h3>
+    <!-- novalidate added to disable default styling for "required field" on diff browsers. -->
+    <!-- needs-validation class added in form to enable bootstrap JS logic -->
+    <form method="POST" action="/listings" novalidate class="needs-validation" enctype="multipart/form-data">
+
+      <!-- margin bottom 3class added in all divs to create spaces btw them -->
+      <!-- DIV TITLE ---------------------->
+      <div class="mb-3"> 
+        <!-- Text area -->
+        <label for="title" class="form-label">Title</label>
+        <!-- object created to extrac these variables in CREATE route.
+        object name : listing[value] : key value pair   -->
+        
+        <input 
+        name="listing[title]" 
+        placeholder="Add a title.." 
+        type="text" 
+        class="form-control" 
+        required
+        />
+
+        <div class="valid-feedback">Title looks good.</div>
+        <div class="invalid-feedback">Title missing.</div>
+
+      </div>
+
+      <!-- DIV DESCRIPTION ---------------------->
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+
+        <textarea name="listing[description]" placeholder="Description.." class="form-control" required></textarea>
+
+        <div class="valid-feedback">Description looks good.</div>
+        <div class="invalid-feedback">Description missing.</div>
+
+
+      </div>
+
+      <!-- DIV image ---------------------->
+       
+      <!-- link of image upload -->
+      <!-- <div class="mb-3">
+
+        <label for="image" class="form-label">Image</label>
+
+        <input
+        name="listing[image]"
+        placeholder="Enter image URL/Link.."
+        type="text"
+        class="form-control"
+      />
+
+      </div> -->
+      <!-- file of image upload -->
+      <div class="mb-3">
+
+        <label for="image" class="form-label">Upload Listing Image</label>
+
+        <input
+        name="listing[image]"
+        type="file"
+        class="form-control"
+      />
+
+      </div>
+      
+<!-- row div -->
+      <div class="row"> 
+          <!-- price and country ek line pe aye so we divided them in ratio 4:8 as col-4 and col-8 with md for medium screen size -->
+          <!-- DIV price ---------------------->
+          <div class="mb-3 col-md-4">
+
+            <label for="price" class="form-label">Price</label>
+
+            <input 
+            name="listing[price]" 
+            placeholder="1200" 
+            class="form-control"
+            required
+            />
+
+            <div class="valid-feedback">Price looks good.</div>
+            <div class="invalid-feedback">Price missing.</div>
+
+
+          </div>
+
+          <!-- DIV country ---------------------->
+          <div class="mb-3 col-md-8">
+
+            <label for="country" class="form-label">Country</label>
+
+            <input 
+            name="listing[country]" 
+            placeholder="India" 
+            type="text" 
+            class="form-control"
+            required
+            />
+
+            <div class="valid-feedback">Country looks good.</div>
+            <div class="invalid-feedback">Country missing.</div>
+
+
+          </div>
+      </div> <!-- row div -->
+
+      <!-- DIV location ---------------------->
+      <div class="mb-3">
+
+        <label for="location" class="form-label">Location</label>
+
+        <input
+        name="listing[location]"
+        placeholder="Enter location.."
+        type="text"
+        class="form-control"
+        required
+        />
+
+        <div class="valid-feedback">Location looks good.</div>
+        <div class="invalid-feedback">Location missing.</div>
+
+
+      </div>
+      
+      <button class="btn btn-dark newform-btn mb-3">Add</button>
+      <br><br>
+    </form>
+
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------->
+  </div> <!-- col div -->
+</div> <!-- row div -->
